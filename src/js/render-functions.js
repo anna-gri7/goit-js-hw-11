@@ -4,8 +4,9 @@ import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
 
 
-export const createGallery = async (images) => {
+export const createGallery = (images) => {
     const findList = document.querySelector('.gallery');
+    if (!findList) return;
     
     const addMarkup = images.map(image => {
         return `<li class = "gallery-item">
@@ -33,7 +34,7 @@ export const createGallery = async (images) => {
   <span class="info-span">downloads:</span>
   <span> ${image.downloads}</span>
   </li>
-        </ul>`
+        </ul> </li>`
     
     }).join('');
     findList.innerHTML = addMarkup;

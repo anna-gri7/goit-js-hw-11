@@ -17,9 +17,13 @@ const findForm = document.querySelector('form');
 
 findForm.addEventListener('submit', (e) => {
     e.preventDefault();
+    
+    const query = e.currentTarget.elements['search-text'].value.trim();
+    if (query === "") {
+        return;
+    }
     clearGallery();
     showLoader();
-    const query = e.currentTarget.elements['search-text'].value.trim();
     getImagesByQuery(query).then(res => {
         hideLoader();
         if (res.hits.length === 0) {

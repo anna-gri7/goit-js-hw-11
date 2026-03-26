@@ -11,11 +11,11 @@ export const serverApi = axios.create({
     }
 });
 
-export const getImagesByQuery = async (query) => {
-    return serverApi.get('', { params: { q: query }}).then(res => res.data)
+export const getImagesByQuery = (query) => {
+    return serverApi.get('', { params: { q: query } }).then(res => res.data).catch(error => { console.error(error); throw error;})
 };
 
-// cath додати ?
+
 
 
 
