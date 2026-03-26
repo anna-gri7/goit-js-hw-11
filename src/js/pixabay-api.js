@@ -1,7 +1,7 @@
 
 import axios from "axios";
 
-const serverApi = axios.create({
+export const serverApi = axios.create({
     baseURL: 'https://pixabay.com/api/',
       params: {
         key: '55176910-b129664d9c533e9cf4d6ff537',
